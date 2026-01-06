@@ -1,0 +1,49 @@
+{
+  "name": "وكيل البحث - Realme C25 Y",
+  "short_name": "وكيل البحث",
+  "description": "وكيل بحث مخصص محسّن لـ Realme C25 Y مع دعم محركات بحث متعددة",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a73e8",
+  "orientation": "portrait",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "screenshot-1.png",
+      "sizes": "720x1600",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "بحث جديد",
+      "short_name": "بحث",
+      "description": "فتح بحث جديد",
+      "url": "/",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}

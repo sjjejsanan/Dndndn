@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a73e8">
+    <meta name="description" content="وكيل بحث مخصص محسّن لـ Realme C25 Y">
+    <title>وكيل البحث - Realme C25 Y</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">🔍 وكيل البحث</h1>
+            <button class="settings-btn" id="settingsBtn" aria-label="الإعدادات">⚙️</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <button class="voice-btn" id="voiceBtn" aria-label="البحث الصوتي">🎤</button>
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        id="searchInput" 
+                        placeholder="ابحث في الإنترنت..."
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                    >
+                    <button class="clear-btn" id="clearBtn" aria-label="مسح">✕</button>
+                </div>
+                
+                <!-- Search Engine Selector -->
+                <div class="engine-selector">
+                    <button class="engine-btn active" data-engine="google">
+                        <span class="engine-icon">G</span>
+                        <span class="engine-name">Google</span>
+                    </button>
+                    <button class="engine-btn" data-engine="bing">
+                        <span class="engine-icon">B</span>
+                        <span class="engine-name">Bing</span>
+                    </button>
+                    <button class="engine-btn" data-engine="duckduckgo">
+                        <span class="engine-icon">D</span>
+                        <span class="engine-name">DuckDuckGo</span>
+                    </button>
+                    <button class="engine-btn" data-engine="yahoo">
+                        <span class="engine-icon">Y</span>
+                        <span class="engine-name">Yahoo</span>
+                    </button>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="action-btn" id="imageSearchBtn">
+                        <span class="action-icon">🖼️</span>
+                        <span class="action-text">صور</span>
+                    </button>
+                    <button class="action-btn" id="videoSearchBtn">
+                        <span class="action-icon">🎥</span>
+                        <span class="action-text">فيديو</span>
+                    </button>
+                    <button class="action-btn" id="newsSearchBtn">
+                        <span class="action-icon">📰</span>
+                        <span class="action-text">أخبار</span>
+                    </button>
+                    <button class="action-btn" id="mapsSearchBtn">
+                        <span class="action-icon">🗺️</span>
+                        <span class="action-text">خرائط</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search History -->
+        <section class="history-section" id="historySection">
+            <div class="section-header">
+                <h2 class="section-title">سجل البحث</h2>
+                <button class="clear-history-btn" id="clearHistoryBtn">مسح الكل</button>
+            </div>
+            <div class="history-list" id="historyList">
+                <!-- History items will be inserted here -->
+            </div>
+        </section>
+
+        <!-- Favorites -->
+        <section class="favorites-section" id="favoritesSection">
+            <div class="section-header">
+                <h2 class="section-title">المفضلة</h2>
+            </div>
+            <div class="favorites-grid" id="favoritesGrid">
+                <!-- Favorite items will be inserted here -->
+            </div>
+        </section>
+
+        <!-- Suggestions -->
+        <div class="suggestions-dropdown" id="suggestionsDropdown">
+            <!-- Suggestions will be inserted here -->
+        </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">الإعدادات</h2>
+                <button class="modal-close" id="closeSettingsBtn">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <span>محرك البحث الافتراضي</span>
+                        <select class="setting-select" id="defaultEngineSelect">
+                            <option value="google">Google</option>
+                            <option value="bing">Bing</option>
+                            <option value="duckduckgo">DuckDuckGo</option>
+                            <option value="yahoo">Yahoo</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <span>حفظ سجل البحث</span>
+                        <input type="checkbox" class="setting-checkbox" id="saveHistoryCheckbox" checked>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <span>البحث الصوتي</span>
+                        <input type="checkbox" class="setting-checkbox" id="voiceSearchCheckbox" checked>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <span>الوضع الداكن</span>
+                        <input type="checkbox" class="setting-checkbox" id="darkModeCheckbox">
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">
+                        <span>اللغة</span>
+                        <select class="setting-select" id="languageSelect">
+                            <option value="ar">العربية</option>
+                            <option value="en">English</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="saveSettingsBtn">حفظ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Search Modal -->
+    <div class="modal" id="voiceModal">
+        <div class="modal-content voice-modal-content">
+            <div class="voice-animation">
+                <div class="voice-circle"></div>
+                <div class="voice-icon">🎤</div>
+            </div>
+            <p class="voice-text">جاري الاستماع...</p>
+            <button class="btn btn-secondary" id="cancelVoiceBtn">إلغاء</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-message" id="toastMessage"></span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
